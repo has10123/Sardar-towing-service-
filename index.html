@@ -350,6 +350,34 @@
   .foot-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:20px;font-size:13.5px;color:var(--muted);}
   .foot-grid b{color:var(--cream);}
 
+  /* ---------- Sticky mobile CTA bar ---------- */
+  .sticky-bar{
+    display:none;
+    position:fixed;
+    bottom:0;left:0;right:0;
+    z-index:100;
+    background:rgba(11,11,12,0.97);
+    border-top:1px solid var(--line);
+    backdrop-filter:blur(8px);
+    padding:12px 16px;
+    gap:10px;
+  }
+  .sticky-bar a{
+    flex:1;
+    display:flex;align-items:center;justify-content:center;gap:8px;
+    padding:14px 10px;
+    border-radius:4px;
+    font-weight:700;
+    font-size:15px;
+    text-decoration:none;
+  }
+  .sticky-bar .s-call{background:var(--gold);color:#161208;}
+  .sticky-bar .s-wa{background:#25D366;color:#fff;}
+  @media(max-width:860px){
+    .sticky-bar{display:flex;}
+    body{padding-bottom:80px;}
+  }
+
   /* ---------- Responsive ---------- */
   @media (max-width:900px){
     .hero-grid{grid-template-columns:1fr;}
@@ -941,15 +969,15 @@
     <div class="wrap">
       <div class="stats">
         <div class="stat reveal">
-          <span class="num" data-target="24" data-suffix="/7">0/7</span>
+          <span class="num" data-target="24" data-suffix="/7">24/7</span>
           <span class="label">Always On Call</span>
         </div>
         <div class="stat reveal">
-          <span class="num" data-target="100" data-prefix="AED ">AED 0</span>
+          <span class="num" data-target="100" data-prefix="AED ">AED 100</span>
           <span class="label">Starting Price</span>
         </div>
         <div class="stat reveal">
-          <span class="num" data-target="100" data-suffix="%">0%</span>
+          <span class="num" data-target="100" data-suffix="%">100%</span>
           <span class="label">Dubai-Wide Coverage</span>
         </div>
       </div>
@@ -1168,6 +1196,16 @@
     });
   }
 </script>
+
+<!-- Sticky mobile CTA bar — always visible on phones -->
+<div class="sticky-bar" aria-label="Contact Sardar Towing Service">
+  <a class="s-call" href="tel:+971528333027">
+    📞 Call Now
+  </a>
+  <a class="s-wa" href="https://wa.me/971528333027?text=Hi%2C%20I%20need%20vehicle%20recovery.%20My%20location%3A%20" target="_blank" rel="noopener">
+    💬 WhatsApp
+  </a>
+</div>
 
 </body>
 </html>
